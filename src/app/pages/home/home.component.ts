@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit{
 
     if(this.historico.ids_filmes.length == 0) {
       this.filmes = [];
-      return;
     }
 
     this.filmesService.selecionarFilmesPorIds(this.historico.ids_filmes).subscribe(filmes => {
@@ -71,21 +70,6 @@ export class HomeComponent implements OnInit{
     this.filmesService.selecionarFilmesMelhoresAvaliados(pagina).subscribe(filmes => {
       this.filmes = filmes;
     });
-  }
-
-  selecionarFilmesPorTitulo(titulo?: string) {  
-    this.listagemTipo = 'pesquisados';
-    this.ehPaginado = false;
-
-    if(!titulo) {
-      this.filmes = [];
-      return;
-    }
-
-    this.router.navigate(
-      ['/busca'],
-      { queryParams: { query: titulo} }
-    );
   }
 
   paginaSelecionada(pagina: number) {

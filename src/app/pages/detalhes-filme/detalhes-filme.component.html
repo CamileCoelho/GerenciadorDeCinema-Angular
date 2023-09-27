@@ -1,13 +1,14 @@
 <section>
     <div class="container d-grid gap-3 my-4">
         <div class="d-flex align-items-center">
-            <h1 class="text-primary-dark">{{filmeDetalhes.titulo}}
+            <div>
+                <h1 class="text-light">{{filmeDetalhes.titulo}}</h1>
                 <p class="d-block text-secondary" id="dataLancamento"></p>
-                <p class="d-block text-dark" id="dataLancamento">{{filmeDetalhes.data.split('-')[0]}}</p>
-            </h1>
+                <p class="d-block text-light-emphasis" id="dataLancamento">{{filmeDetalhes.data.split('-')[0]}}</p>                
+            </div>
             <div class="ms-auto text-end">
-                <p class="text-dark">{{filmeDetalhes.nota}} / 10</p>
-                <p class="text-dark">{{filmeDetalhes.votos}} Votos</p>
+                <p class="text-light-emphasis">{{filmeDetalhes.nota}} / 10</p>
+                <p class="text-light-emphasis">{{filmeDetalhes.votos}} Votos</p>
                 <i id="lblFavorito"
                     [ngClass]="ehFavorito ? 'bi bi-heart-fill fs-2 text-primary' : 'bi bi-heart fs-2 text-primary' "
                     role="button" (click)="atualizarFavoritos()"
@@ -30,45 +31,45 @@
 
         <div id="pnlGeneros" class="d-flex gap-3">
             <span *ngFor="let genero of filmeDetalhes.generos"
-                class="badge rounded-pill fs-5 px-4 py-2 bg-primary text-light">
+                class="badge rounded-pill fs-5 px-4 py-2 bg-primary text-light ajust-bg">
                 {{genero}}
             </span>
         </div>
 
         <div class="row">
-            <p id="lblDescricao" class="fs-5 text-dark">
+            <p id="lblDescricao" class="fs-5 text-light-emphasis">
                 {{filmeDetalhes.descricao}}
             </p>
         </div>
 
         <div id="pnlCreditos" class="row">
             <div class="row border-bottom border-dark">
-                <p class="col my-auto py-2 fw-bold align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 fw-bold align-text-center text-light-emphasis ml-auto">
                     Diretores
                 </p>
-                <p class="col my-auto py-2 align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 align-text-center text-light-emphasis ml-auto">
                     {{formatarListaCreditos(filmeCreditos.diretores)}}
                 </p>
             </div>
             <div class="row border-bottom border-dark">
-                <p class="col my-auto py-2 fw-bold align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 fw-bold align-text-center text-light-emphasis ml-auto">
                     Escritores
                 </p>
-                <p class="col my-auto py-2 align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 align-text-center text-light-emphasis ml-auto">
                     {{formatarListaCreditos(filmeCreditos.escritores)}}
                 </p>
             </div>
             <div class="row">
-                <p class="col my-auto py-2 fw-bold align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 fw-bold align-text-center text-light-emphasis ml-auto">
                     Atores
                 </p>
-                <p class="col my-auto py-2 align-text-center text-dark ml-auto">
+                <p class="col my-auto py-2 align-text-center text-light-emphasis ml-auto">
                     {{formatarListaCreditos(filmeCreditos.atores)}}
                 </p>
             </div>
             <!-- <span *ngIf="filmeAvaliacoes.length" class="d-flex justify-content-center">
                 <button (click)="alterarVisualizacaoAvaliacoes()"
-                    [ngClass]="avaliacaoVisivel ? 'btn-ocultar text-light bg-dark' : 'btn-visualizar text-dark bg-light' "
+                    [ngClass]="avaliacaoVisivel ? 'btn-ocultar text-light bg-dark' : 'btn-visualizar text-light-emphasis bg-light' "
                     class="my-5 text-center w-50 rounded-pill">
                     <h2>{{avaliacaoVisivel ? 'Ocultar Avaliações' : 'Visualizar Avaliações'}}</h2>
                 </button>

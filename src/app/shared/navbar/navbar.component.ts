@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ListagemFilme } from "src/app/models/listagem-filme";
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +8,12 @@ import { Component } from "@angular/core";
 })
 
 export class NavbarComponent {
+  filmes: ListagemFilme[] = [];
 
+  selecionarFilmesPorTitulo(titulo?: string) { 
+    if(!titulo) {
+      this.filmes = [];
+      return;
+    }
+  }  
 }
