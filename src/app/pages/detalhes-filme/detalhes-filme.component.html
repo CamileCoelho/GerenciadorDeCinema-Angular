@@ -21,7 +21,7 @@
                 <img [src]="imagem_url" class="img-fluid rounded-3" alt="" />
             </div>
             <div class="col-lg">
-                <div *ngIf="video_url != '' " id="pnlTrailer" class="ratio ratio-16x9 h-100">
+                <div *ngIf="video_url != '' " id="pnlTrailer" class="ratio ratio-21x9 h-100">
                     <iframe class="rounded-3" id="iframeTrailer" [src]="video_url | urlSeguro" frameborder="0"
                         allowfullscreen></iframe>
                 </div>
