@@ -1,0 +1,8 @@
+.lbl-selecionado {
+  color: #055160 !important;
+}
+
+.lbl-categoria:hover {
+  color: #358d9f !important;
+  background-color: rgb(230, 243, 239) !important;
+}
