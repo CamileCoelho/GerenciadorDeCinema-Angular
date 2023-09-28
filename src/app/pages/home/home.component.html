@@ -1,27 +1,27 @@
 <div id="container" class="container d-grid gap-3">
   <div class="row gap-3">
-      <p [class.lbl-selecionado]="tipoDaLista == 'populares'"
-          class="lbl-categoria col-12 col-md col-lg  fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
-          (click)="selecionarFilmesPopulares()" role="button">
-          Filmes em Alta
-      </p>
-      <p [class.lbl-selecionado]="tipoDaLista == 'avaliados'"
-          class="lbl-categoria col-12 col-md col-lg  fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
-          (click)="selecionarFilmesMelhoresAvaliados()" role="button">
-          Filmes Bem Avalidaos
-      </p>
-      <p [class.lbl-selecionado]="tipoDaLista == 'favoritos'"
-          class="lbl-categoria col-12 col-md col-lg fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
-          (click)="selecionarFavoritos()" role="button">
-          Meus Favoritos
-      </p>
+    <p [class.lbl-selecionado]="tipoDaLista == 'populares'"
+        class="lbl-categoria col-12 col-md col-lg  fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
+        (click)="selecionarFilmesPopulares()" role="button">
+        Filmes em Alta
+    </p>
+    <p [class.lbl-selecionado]="tipoDaLista == 'avaliados'"
+        class="lbl-categoria col-12 col-md col-lg  fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
+        (click)="selecionarFilmesMelhoresAvaliados()" role="button">
+        Filmes Bem Avalidaos
+    </p>
+    <p [class.lbl-selecionado]="tipoDaLista == 'favoritos'"
+        class="lbl-categoria col-12 col-md col-lg fw-semibold text-info-emphasis text-center fs-5 bg-gradient rounded-3 my-2"
+        (click)="selecionarFavoritos()" role="">
+        Meus Favoritos
+    </p>
   </div>
   <hr style="border-color: rgb(61, 122, 148); border-width: 2px; border-style: solid;">
 
   <div class="row g-3 mb-3">
       <app-card-filme *ngFor="let listagemFilme of listagemFilmes" [filme]="listagemFilme" class="col-12 col-md-4 col-lg-2"></app-card-filme>
   </div>
-  
+
   <app-paginacao *ngIf="ehPaginado" class="d-flex justify-content-center"
       (onPaginaSelecionada)="paginaSelecionada($event)" [page]="paginaAtual">
   </app-paginacao>
