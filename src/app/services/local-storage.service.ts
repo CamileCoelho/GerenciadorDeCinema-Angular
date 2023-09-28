@@ -1,4 +1,4 @@
-import { FilmeFavorito } from "../models/filme-favorito";
+import { FilmesFavoritos } from "../models/filme-favorito";
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,18 +9,18 @@ export class LocalStorageService {
 
   private endereco: string = "gerenciador-sistemas:favoritos";
 
-  salvarDados(dados: FilmeFavorito): void {
+  salvarDados(dados: FilmesFavoritos): void {
     const jsonString = JSON.stringify(dados);
 
     localStorage.setItem(this.endereco, jsonString);
   }
 
-  carregarDados(): FilmeFavorito {
+  carregarDados(): FilmesFavoritos {
     const dadosJson = localStorage.getItem(this.endereco);
 
     if (dadosJson)
-      return JSON.parse(dadosJson) as FilmeFavorito;
+      return JSON.parse(dadosJson) as FilmesFavoritos;
 
-    return new FilmeFavorito();
+    return new FilmesFavoritos();
   }
 }

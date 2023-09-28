@@ -1,4 +1,4 @@
-export class FilmeFavorito {
+export class FilmesFavoritos {
   ids_filmes: number[];
 
   constructor() {

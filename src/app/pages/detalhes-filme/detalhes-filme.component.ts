@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { map, filter } from "rxjs";
 import { FilmeCreditos } from 'src/app/models/creditos-filme';
 import { DetalhesFilmes } from 'src/app/models/detalhes-filme';
-import { FilmeFavorito } from 'src/app/models/filme-favorito';
+import { FilmesFavoritos } from 'src/app/models/filme-favorito';
 import { FilmeTrailer } from 'src/app/models/trailer-filme';
 import { FilmeService } from 'src/app/services/filme.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
@@ -24,14 +24,13 @@ export class FilmeDetalhesComponent {
   imagem_url: string;
   video_url: string;
   ehFavorito: boolean;
-  favoritos: FilmeFavorito;
+  favoritos: FilmesFavoritos;
 
   constructor(
     private localStorageService: LocalStorageService,
     private route: ActivatedRoute,
     private filmeService: FilmeService,
-    private toastService: ToastrService,
-    private sanitizer: DomSanitizer
+    private toastService: ToastrService
     ) {
 
     this.filmeDetalhes = {
@@ -56,7 +55,7 @@ export class FilmeDetalhesComponent {
       atores: [],
     };
 
-    this.favoritos = new FilmeFavorito();
+    this.favoritos = new FilmesFavoritos();
     this.imagem_url = "";
     this.video_url = "";
     this.avaliacaoVisivel = false;

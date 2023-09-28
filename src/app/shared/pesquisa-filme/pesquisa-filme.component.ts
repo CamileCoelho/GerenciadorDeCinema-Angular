@@ -5,6 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './pesquisa-filme.component.html',
   styleUrls: ['./pesquisa-filme.component.css']
 })
+
 export class PesquisaFilmeComponent {
   @Output() onTituloSelecionado: EventEmitter<string>;
   titulo: string;
