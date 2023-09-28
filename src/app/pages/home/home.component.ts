@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit{
     }
 
   ngOnInit(): void {  
-      this.favoritos = this.localStorageService.carregarDados();  
+      this.favoritos = this.localStorageService.carregarDadosFavoritos();  
       this.selecionarFilmesPopulares();
     }
 
@@ -39,8 +39,6 @@ export class HomeComponent implements OnInit{
     this.ehPaginado = false;
 
     this.favoritos.ids_filmes.shift();
-    
-    debugger 
 
     if(this.favoritos.ids_filmes.length == 0) {
       this.listagemFilmes = [];

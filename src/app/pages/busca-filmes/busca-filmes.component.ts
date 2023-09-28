@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BuscaFilme } from 'src/app/models/busca-filme';
+import { ListagemFilme } from 'src/app/models/listagem-filme';
 import { FilmeService } from 'src/app/services/filme.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { FilmeService } from 'src/app/services/filme.service';
 })
 
 export class BuscaFilmesComponent implements OnInit{
-  filmesBusca: BuscaFilme[];
+  listagemFilmes: ListagemFilme[];
 
   constructor(
     private filmesService: FilmeService,
     private route: ActivatedRoute) {
-    this.filmesBusca = []
+    this.listagemFilmes = []
   }
 
   ngOnInit(): void {
@@ -28,12 +28,12 @@ export class BuscaFilmesComponent implements OnInit{
 
   selecionarFilmesDetalhesPorTitulo(titulo: string) {  
     if(titulo == '') {
-      this.filmesBusca = [];
+      this.listagemFilmes = [];
       return;
     }
 
     this.filmesService.buscarFilmePorTitulo(titulo).subscribe(filmesDetalhes => {
-      this.filmesBusca = filmesDetalhes;
+      this.listagemFilmes = filmesDetalhes;
     });
   }
 }

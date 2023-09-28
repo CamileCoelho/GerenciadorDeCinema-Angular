@@ -6,7 +6,7 @@
     </div>
     
     <div class="d-flex">
-      <app-pesquisa-filme (onTituloSelecionado)="selecionarFilmesPorTitulo($event)" class="ml-auto mx-2 me-3"></app-pesquisa-filme>
+      <app-pesquisa-filme routerLink="/busca-filmes" (onTituloSelecionado)="selecionarFilmesPorTitulo($event)" class="ml-auto mx-2 me-3"></app-pesquisa-filme>
       <button routerLink="/home" class="btn btn-outline-info ms-3 mx-2 me-3">Pagina Inicial</button>
     </div>
   </div>

@@ -9,13 +9,11 @@ export class LocalStorageService {
 
   private endereco: string = "gerenciador-sistemas:favoritos";
 
-  salvarDados(dados: FilmesFavoritos): void {
-    const jsonString = JSON.stringify(dados);
-
-    localStorage.setItem(this.endereco, jsonString);
+  salvarDadosFavoritos(dados: FilmesFavoritos): void {
+    localStorage.setItem(this.endereco, JSON.stringify(dados));
   }
 
-  carregarDados(): FilmesFavoritos {
+  carregarDadosFavoritos(): FilmesFavoritos {
     const dadosJson = localStorage.getItem(this.endereco);
 
     if (dadosJson)

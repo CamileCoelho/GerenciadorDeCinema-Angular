@@ -3,3 +3,21 @@
   max-width: 100%;
   height: auto;
 }
+
+.img-fluid.rounded-3.img-responsive {
+  border: 2px solid transparent !important; 
+  transition: border-color 0.2s ease !important; 
+}
+
+.link-information {
+  transition: color 0.2s ease !important; 
+}
+
+.img-fluid.rounded-3.img-responsive:hover {
+  border-color: #17a2b8  !important;
+}
+
+.link-information:hover {
+  color: #17a2b8 !important; 
+}
+

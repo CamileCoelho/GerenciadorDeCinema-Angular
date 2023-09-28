@@ -1,3 +1,8 @@
 .input-pesquisa::placeholder {
   color: #17a2b8; 
 }
+
+.custom-text-color {
+  text-emphasis-color: #ffffff; 
+  color: #ffffff; 
+}

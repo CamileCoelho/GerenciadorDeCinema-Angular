@@ -63,7 +63,7 @@ export class FilmeDetalhesComponent {
   }
 
   ngOnInit() {
-    this.favoritos = this.localStorageService.carregarDados();
+    this.favoritos = this.localStorageService.carregarDadosFavoritos();
 
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
 
@@ -104,6 +104,6 @@ export class FilmeDetalhesComponent {
       this.ehFavorito = true;
     }
 
-    this.localStorageService.salvarDados(this.favoritos);
+    this.localStorageService.salvarDadosFavoritos(this.favoritos);
   }
 }
