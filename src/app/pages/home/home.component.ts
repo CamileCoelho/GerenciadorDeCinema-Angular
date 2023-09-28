@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit{
     this.tipoDaLista = 'favoritos';
     this.ehPaginado = false;
 
-    this.favoritos.ids_filmes.shift();
+    //this.favoritos.ids_filmes.shift();
 
     if(this.favoritos.ids_filmes.length == 0) {
       this.listagemFilmes = [];
